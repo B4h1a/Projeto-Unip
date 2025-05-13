@@ -4,36 +4,37 @@ const games = [
         description: "O EA SPORTS FC™ 25 oferece mais maneiras de ganhar pelo clube...",
         releaseDate: "",
         price: "R$ 299",
-        imageUrl: "https://cdn1.epicgames.com/offer/b61e8ddd14e94619b7a74cf9d73f86b5/EGS_EASPORTSFC25StandardEdition_EACanada_S2_1200x1600-6e6b5c1d5d30e15b1dbdde721c6bc544"
+        imageUrl: "assets/FC-2025.png"
     },
     {
-        title: "Red Dead Redemption",
+        title: "Red Dead Redemption 2",
         description: "Pela primeira vez em seu célebre legado, jogue Red Dead Redemption no PC...",
         releaseDate: "29 de Outubro",
         price: "R$ 249,50",
-        imageUrl: "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA08519_00/12/i_3da1cf7c41dc7652f9b639e1680d96436773658668c7dc3930c441291095713b/i/icon0.png"
+        imageUrl: "assets/red2.jpg"
     },
     {
         title: "NBA 2K25",
         description: "Viva o sonho da NBA com gráficos realistas, jogabilidade aprimorada e modos dinâmicos.",
         releaseDate: "Disponível agora",
         price: "R$ 199,90",
-        imageUrl: "https://image.api.playstation.com/vulcan/ap/rnd/202406/0623/cac0e47bd9ff01264779628b75d1f750b93bc4dcf6a56c10.jpg"
+        imageUrl: "assets/nba.png"
     },
     {
         title: "Until Dawn™",
         description: "Recriado e aprimorado para PC, Until Dawn convida você a reviver o pesadelo...",
         releaseDate: "Lançamento em breve",
         price: "R$ 299,90",
-        imageUrl: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2172010/header.jpg?t=1745495247"
+        imageUrl: "assets/UntilDawn.jpg"
     },
     {
         title: "Off The Grid",
         description: "TEARDROP ISLAND DESPERATELY NEEDS A SAVIOR...",
         releaseDate: "Em breve",
         price: "Gratuito",
-        imageUrl: "https://cdn1.epicgames.com/spt-assets/6539240b4a2f47fd834a969bdf008ce9/off-the-grid-1bo5l.jpg"
-    }
+        imageUrl: "assets/OffTheGrid.jpg"
+    },
+    
 ];
 
 let selectedGameIndex = 0;
@@ -96,3 +97,35 @@ function renderCards() {
 }
 
 renderCards();
+const searchInput = document.getElementById("search-input");
+const searchResults = document.getElementById("search-results");
+
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase().trim();
+  if (!query) {
+    searchResults.style.display = "none";
+    searchResults.innerHTML = "";
+    return;
+  }
+
+  const matchedGame = games.find(game =>
+    game.title.toLowerCase().includes(query)
+  );
+
+  if (matchedGame) {
+    searchResults.style.display = "block";
+    searchResults.innerHTML = `
+      <div class="search-result-item">
+        <img src="${matchedGame.imageUrl}" alt="${matchedGame.title}">
+        <div>
+          <h3>${matchedGame.title}</h3>
+          <p>${matchedGame.price}</p>
+        </div>
+      </div>
+    `;
+  } else {
+    searchResults.style.display = "block";
+    searchResults.innerHTML = `<p>Nenhum jogo encontrado.</p>`;
+  }
+});
+

@@ -10,16 +10,31 @@
 
 <body class="body">
     <header class="header">
-        <div class="content">
-            <span class="logo">Loja de Jogos</span>
+        <div class="header-left">
+            <img src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" alt="Logo" class="logo-img">
+            <span class="logo-text">GameVerse</span>
         </div>
-        <nav>
+
+        <nav class="nav-menu">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Jogos</a></li>
             </ul>
         </nav>
+
+        <div class="header-right">
+            <div class="search-bar-wrapper">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Buscar jogos..." class="search-input">
+                </div>
+                <!-- Gaveta embutida de resultados -->
+                <div id="search-results" class="search-results-drawer"></div>
+            </div>
+            <button class="btn-login">Perfil(fotinha)</button>
+        </div>
     </header>
+
+
 
     <div class="carousel-container">
         <div id="carousel-highlight" class="carousel-highlight">
@@ -35,6 +50,24 @@
     </div>
     <br><br><br>
     <div class="cards-container" id="game-cards"></div>
+
+
+    <!-- Seção de Lançamentos -->
+<section class="lancamentos-section">
+  <h2>Lançamentos Recentes</h2>
+  <div class="lancamentos-container">
+    <div class="lancamento-card">
+      <img src="assets/kingdom.png" alt="Kingdom Come: Deliverance II">
+    </div>
+    <div class="lancamento-card">
+      <img src="assets/acshadows.jpg" alt="Assassin's Creed Shadows">
+    </div>
+    <div class="lancamento-card">
+      <img src="assets/wukong.jpg" alt="Black Myth: Wukong">
+    </div>
+  </div>
+</section>
+
 
     <footer class="footer">
         <p style="color: white; text-align: center; padding: 20px;">© 2025 Loja de Jogos</p>
