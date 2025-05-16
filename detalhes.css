@@ -9,6 +9,23 @@ body {
   justify-content: center;
   min-height: 100vh;
 }
+a{
+  text-decoration: none;
+}
+
+.btn-login {
+  border-radius: 10px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.icon-user {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
 
 .detalhes-container {
   width: 90%;
@@ -200,20 +217,7 @@ body {
   width: 150px;
 }
 
-.btn-login {
-  padding: 8px 16px;
-  border: none;
-  border-radius: 20px;
-  font-size: 14px;
-  cursor: pointer;
-  background-color: #007bff;
-  color: white;
-  transition: background 0.3s;
-}
 
-.btn-login:hover {
-  background-color: #005ec7;
-}
 
 /* Responsivo Header */
 @media (max-width: 768px) {
@@ -225,12 +229,12 @@ body {
 
   .header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .header-right {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     margin-top: 10px;
   }
 }
@@ -308,4 +312,43 @@ body {
   padding-top: 15px;
   font-size: 13px;
   color: #999;
+}
+/* Responsividade para detalhes.html */
+@media (max-width: 992px) {
+  .detalhes-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .product-image {
+    width: 100%;
+    max-height: 350px;
+    margin-bottom: 20px;
+  }
+
+  .product-details {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-details h2 {
+    font-size: 20px;
+  }
+
+  .product-details p,
+  .product-details ul {
+    font-size: 14px;
+  }
+
+  .btn-buy {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
 }

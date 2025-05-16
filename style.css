@@ -87,7 +87,6 @@
   width: 150px;
 }
 
-.btn-login,
 .btn-download {
   padding: 8px 16px;
   border: none;
@@ -96,15 +95,21 @@
   cursor: pointer;
   transition: background 0.3s;
 }
-
 .btn-login {
-  background-color: #007bff;
-  color: white;
+  border-radius: 10px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
 }
 
-.btn-login:hover {
-  background-color: #005ec7;
+.icon-user {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
 }
+
+
 
 .btn-download {
   background-color: #444;
@@ -203,7 +208,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-.auth-buttons .btn-login,
+.auth-buttons,
 .auth-buttons .btn-download {
     margin-left: 18px;
     padding: 9px 18px;
@@ -213,10 +218,6 @@ a {
     text-decoration: none;
 }
 
-.btn-login {
-    background-color: #007bff;
-    color: white;
-}
 
 .btn-download {
     background-color: gray;
@@ -268,8 +269,7 @@ a {
     background-color: black;
     border-radius: 8px;
     width: 200px;
-    height: 330px;
-    /* altura fixa para todos */
+    height: 380px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -332,6 +332,7 @@ a {
 }
 
 .lancamento-card img {
+  cursor: pointer;
   width: 100% ;
   border-radius: 5px;
   height: 270px;
@@ -491,72 +492,162 @@ a {
 }
 
 /* Responsividade */
+/* --- Responsividade Geral --- */
+
+/* Tablets e telas médias (992px) */
 @media (max-width: 992px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 
-    nav ul {
-        flex-direction: column;
-        gap: 15px;
-        margin-left: 0;
-    }
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 0;
+  }
 
-    .carousel-container {
-        flex-direction: column;
-        height: auto;
-        align-items: center;
-    }
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    .carousel-highlight {
-        max-width: 90%;
-        width: 100%;
-        height: 350px;
-    }
+  .carousel-container {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+  }
 
-    .carousel-sidebar {
-        flex-direction: row;
-        max-width: 100%;
-        overflow-x: auto;
-        overflow-y: hidden;
-        gap: 10px;
-        padding: 10px;
-    }
+  .carousel-highlight {
+    max-width: 90%;
+    width: 100%;
+    height: 350px;
+  }
 
-    .sidebar-item {
-        flex-direction: column;
-        align-items: center;
-        min-width: 100px;
-    }
+  .carousel-sidebar {
+    flex-direction: row;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 10px;
+    padding: 10px;
+  }
 
-    .sidebar-item img {
-        width: 60px;
-        height: 60px;
-    }
+  .sidebar-item {
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+  }
 
-    .cards-container {
-        justify-content: center;
-    }
+  .sidebar-item img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cards-container {
+    justify-content: center;
+  }
 }
 
+/* Tablets menores e celulares grandes (768px) */
+@media (max-width: 768px) {
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .header-right {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .search-bar-wrapper {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+/* Mobile (até 600px) */
 @media (max-width: 600px) {
+  .header {
+    padding: 15px 15px;
+  }
 
-    .card,
-    .product-item {
-        width: 90%;
-    }
+  .logo-text {
+    font-size: 22px;
+  }
 
-    .carousel-highlight {
-        height: 300px;
-        padding: 10px;
-    }
+  .nav-menu ul {
+    gap: 8px;
+  }
 
-    .product-image .product-thumbnail {
-        width: 100%;
-        height: auto;
-    }
+  .carousel-highlight {
+    height: 280px;
+    padding: 10px;
+  }
+
+  .carousel-sidebar {
+    flex-direction: row;
+    max-width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 10px;
+  }
+
+  .sidebar-item {
+    min-width: 90px;
+    padding: 5px;
+  }
+
+  .sidebar-item img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 280px;
+    height: auto;
+  }
+
+
+
+  .search-bar-wrapper {
+    width: 100%;
+  }
+
+  .search-input {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .btn-details {
+    padding: 10px;
+    font-size: 14px;
+  }
 }
 
 .footer {

@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Loja de Jogos</title>
+    <title>Jogos - GameVerse</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="body">
+<body class="body" onload="carregarJogos()">
     <header class="header">
         <div class="header-left">
             <img src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" alt="Logo" class="logo-img" />
@@ -20,7 +20,7 @@
         <nav class="nav-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="jogos.html">Jogos</a></li>
+                <li><a href="jogos.html" class="active">Jogos</a></li>
             </ul>
         </nav>
 
@@ -29,51 +29,16 @@
                 <div class="search-bar">
                     <input type="text" id="search-input" placeholder="Buscar jogos..." class="search-input">
                 </div>
-                <!-- Gaveta embutida de resultados -->
                 <div id="search-results" class="search-results-drawer"></div>
             </div>
             <button class="btn-login">
                 <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Perfil" class="icon-user">
             </button>
-
         </div>
     </header>
+    <br><br>
 
-    <!-- Seção de Lançamentos -->
-    <section class="lancamentos-section">
-        <div class="lancamentos-container">
-            <div class="lancamento-card" data-id="kgc">
-                <img src="assets/kingdom.png" alt="Kingdom Come: Deliverance II">
-            </div>
-            <div class="lancamento-card" data-id="acs">
-                <img src="assets/ACShadowsThumb.jpg" alt="Assassin's Creed Shadows">
-            </div>
-            <div class="lancamento-card" data-id="bmw">
-                <img src="assets/wukong.jpg" alt="Black Myth: Wukong">
-            </div>
-        </div>
-    </section>
-
-
-    <div class="carousel-container">
-        <div id="carousel-highlight" class="carousel-highlight">
-            <div class="highlight-content">
-                <h1 id="game-title"></h1>
-                <p class="release-date" id="game-release"></p>
-                <p class="description" id="game-desc"></p>
-                <p class="price" id="game-price"></p>
-            </div>
-        </div>
-
-        <div class="carousel-sidebar" id="carousel-sidebar"></div>
-    </div>
-    <br><br><br>
-    <div class="cards-container" id="game-cards"></div>
-
-
-
-
-
+    <div class="cards-container" id="lista-jogos"></div>
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section about">
@@ -101,14 +66,12 @@
                     </a>
                 </div>
             </div>
-
         </div>
 
         <div class="footer-bottom">
             <p>© 2025 GameVerse. Todos os direitos reservados.</p>
         </div>
     </footer>
-
 
     <script src="app.js"></script>
 </body>

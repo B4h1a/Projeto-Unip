@@ -13,13 +13,15 @@
   <header class="header">
     <div class="header-left">
       <img src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" alt="Logo" class="logo-img" />
-      <span class="logo-text">GameVerse</span>
+      <a href="index.html">
+        <span class="logo-text">GameVerse</span>
+      </a>
     </div>
 
     <nav class="nav-menu">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Jogos</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="jogos.html">Jogos</a></li>
       </ul>
     </nav>
 
@@ -30,46 +32,48 @@
         </div>
         <div id="search-results" class="search-results-drawer"></div>
       </div>
-      <button class="btn-login">Perfil(fotinha)</button>
+      <button class="btn-login">
+        <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Perfil" class="icon-user">
+      </button>
     </div>
   </header>
-<div style="display: flex; justify-content: center; align-items: center;">
-  <div class="detalhes-container">
-    <button onclick="voltar()" class="voltar-btn">Voltar</button>
-    <h2 id="produto-nome">Carregando...</h2>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <div class="detalhes-container">
+      <button onclick="voltar()" class="voltar-btn">Voltar</button>
+      <h2 id="produto-nome">Carregando...</h2>
 
-    <div class="produto-detalhes-flex">
-      <!-- Coluna da Imagem e Descrição -->
-      <div class="coluna-esquerda">
-        <div class="imagem-container">
-          <img id="produto-imagem" class="produto-imagem" src="" alt="Imagem do produto" />
-          <p class="preco" id="produto-preco"></p>
-        </div>
-        <div class="produto-info">
-          <p id="produto-descricao"></p>
-        </div>
-      </div>
-
-      <!-- Coluna da Requisitos + Botão -->
-      <div class="coluna-direita">
-        <div class="requisitos-sistema" id="requisitos-sistema">
-          <h3>Requisitos de Sistema</h3>
-          <ul>
-            <li><strong>SO:</strong> <span id="req-os"></span></li>
-            <li><strong>Processador:</strong> <span id="req-processador"></span></li>
-            <li><strong>Memória:</strong> <span id="req-memoria"></span></li>
-            <li><strong>Placa de vídeo:</strong> <span id="req-grafica"></span></li>
-            <li><strong>Armazenamento:</strong> <span id="req-armazenamento"></span></li>
-          </ul>
+      <div class="produto-detalhes-flex">
+        <!-- Coluna da Imagem e Descrição -->
+        <div class="coluna-esquerda">
+          <div class="imagem-container">
+            <img id="produto-imagem" class="produto-imagem" src="" alt="Imagem do produto" />
+            <p class="preco" id="produto-preco"></p>
+          </div>
+          <div class="produto-info">
+            <p id="produto-descricao"></p>
+          </div>
         </div>
 
-        <button onclick="adicionarAoCarrinho()" class="adicionar-carrinho-btn">
-          Comprar Jogo
-        </button>
+        <!-- Coluna da Requisitos + Botão -->
+        <div class="coluna-direita">
+          <div class="requisitos-sistema" id="requisitos-sistema">
+            <h3>Requisitos de Sistema</h3>
+            <ul>
+              <li><strong>SO:</strong> <span id="req-os"></span></li>
+              <li><strong>Processador:</strong> <span id="req-processador"></span></li>
+              <li><strong>Memória:</strong> <span id="req-memoria"></span></li>
+              <li><strong>Placa de vídeo:</strong> <span id="req-grafica"></span></li>
+              <li><strong>Armazenamento:</strong> <span id="req-armazenamento"></span></li>
+            </ul>
+          </div>
+
+          <button onclick="adicionarAoCarrinho()" class="adicionar-carrinho-btn">
+            Comprar Jogo
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
   <!-- Footer copiado da Home -->
   <footer class="footer">
@@ -83,8 +87,8 @@
       <div class="footer-section links">
         <h4>Links Rápidos</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Jogos</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="jogos.html">Jogos</a></li>
         </ul>
       </div>
 

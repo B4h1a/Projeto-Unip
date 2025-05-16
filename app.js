@@ -249,7 +249,7 @@ function renderCards() {
       <div class="card-content">
         <h3>${game.title}</h3>
         <p class="price">${game.price || ""}</p>
-        <button class="btn-details" data-id="${game.id}">Detalhes</button>
+        <button class="btn-details" data-id="${game.id}">Ver Mais</button>
       </div>
     `;
     cardsContainer.appendChild(card);
@@ -382,3 +382,44 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnCarrinho) btnCarrinho.onclick = adicionarAoCarrinho;
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const lancamentoCards = document.querySelectorAll(".lancamento-card");
+
+  lancamentoCards.forEach(card => {
+    card.addEventListener("click", () => {
+      const gameId = card.getAttribute("data-id");
+      if (gameId) {
+        window.location.href = `detalhes.html?id=${gameId}`;
+      }
+    });
+  });
+});
+function carregarJogos() {
+  const container = document.getElementById('lista-jogos');
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  cardGames.forEach(game => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <img src="${game.imageUrl}" alt="${game.title}" />
+      <div class="card-content">
+        <h3>${game.title}</h3>
+        <p class="price">${game.price || ""}</p>
+        <button class="btn-details" data-id="${game.id}">Ver Mais</button>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+
+  // Adiciona evento para os botões "Ver Mais"
+  container.querySelectorAll(".btn-details").forEach(button => {
+    button.addEventListener("click", (e) => {
+      const gameId = e.target.getAttribute("data-id");
+      window.location.href = `detalhes.html?id=${gameId}`;
+    });
+  });
+}
+
