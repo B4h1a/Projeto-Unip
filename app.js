@@ -1,4 +1,36 @@
 // Dados dos jogos (usados em home e detalhes)
+const carouselGames = [
+  {
+    id: 1,
+    title: 'EA SPORTS FC™ 25',
+    description: "EA SPORTS FC™ 25 oferece mais maneiras de vencer, com tecnologia HyperMotionV, PlayStyles otimizados pela Opta e motor gráfico Frostbite. Compita com clubes e ligas de futebol do mundo real com autenticidade inigualável.",
+    imageUrl: 'assets/fc25.jpg'
+  },
+  {
+    id: 2,
+    title: 'Red Dead Redemption 2',
+    description: "Red Dead Redemption 2 traz uma história épica do fora da lei Arthur Morgan, membro da gangue Van der Linde. Explore um mundo vasto e atmosférico com gráficos incríveis e liberdade de escolhas.",
+    imageUrl: 'assets/rdr2.jpg'
+  },
+  {
+    id: 3,
+    title: 'NBA 2K25',
+    description: "Viva o sonho da NBA com gráficos realistas, jogabilidade aprimorada e modos dinâmicos. Crie seu legado nas quadras.",
+    imageUrl: 'assets/nba2k25.jpg'
+  },
+  {
+    id: 4,
+    title: 'Off The Grid',
+    description: "Em uma ilha devastada pela guerra corporativa, lute por sobrevivência em um shooter tático cibernético com narrativa interativa e escolhas profundas.",
+    imageUrl: 'assets/OffTheGridjpg.jpg'
+  },
+  {
+    id: 5,
+    title: 'Assassin’s Creed Shadows',
+    description: "Explore o Japão feudal com dois protagonistas distintos e estilos de combate únicos em Assassin’s Creed Shadows.",
+    imageUrl: 'assets/ACShadowsThumb.jpg'
+  }
+];
 const cardGames = [
   {
     id: "fc25",
@@ -36,7 +68,7 @@ const cardGames = [
     description: "Viva o sonho da NBA com gráficos realistas, jogabilidade aprimorada e modos dinâmicos. Crie seu legado nas quadras.",
     releaseDate: "Disponível agora",
     price: "R$ 199,90",
-    imageUrl: "assets/nba.png",
+    imageUrl: "assets/nba2k25.jpg",
     requirements: {
       os: "Windows 10 64-bit",
       processor: "Intel Core i3-2100 / AMD FX-4100",
@@ -49,7 +81,7 @@ const cardGames = [
     id: "until",
     title: "Until Dawn™",
     description: "Recriado e aprimorado para PC, Until Dawn é um thriller interativo onde cada decisão afeta o destino dos personagens em uma noite aterrorizante.",
-    releaseDate: "Lançamento em breve",
+    releaseDate: "Disponível agora",
     price: "R$ 299,90",
     imageUrl: "assets/UntilDawn.jpg",
     requirements: {
@@ -64,7 +96,7 @@ const cardGames = [
     id: "otg",
     title: "Off The Grid",
     description: "Em uma ilha devastada pela guerra corporativa, lute por sobrevivência em um shooter tático cibernético com narrativa interativa e escolhas profundas.",
-    releaseDate: "Em breve",
+    releaseDate: "Disponível agora",
     price: "Gratuito",
     imageUrl: "assets/OffTheGrid.jpg",
     requirements: {
@@ -81,7 +113,7 @@ const cardGames = [
     description: "Explore o Japão feudal com dois protagonistas distintos e estilos de combate únicos em Assassin’s Creed Shadows.",
     releaseDate: "15 de novembro de 2025",
     price: "R$ 349,00",
-    imageUrl: "assets/acshadows.jpg",
+    imageUrl: "assets/ACShadowsThumb.jpg",
     requirements: {
       os: "Windows 10 64-bit",
       processor: "Intel Core i7-9700K / AMD Ryzen 7 3700X",
@@ -185,9 +217,8 @@ const cardGames = [
 
 
 // Dados do carrossel (subset dos jogos)
-const carouselGames = cardGames.filter(game =>
-  ["fc25", "red2", "nba", "acs", "otg"].includes(game.id)
-);
+
+
 
 // FUNÇÕES CARROSSEL - para página home
 function setupCarousel() {
@@ -235,6 +266,7 @@ function setupCarousel() {
   }, 5000);
 }
 
+
 // FUNÇÃO PARA RENDERIZAR CARDS - para página home
 function renderCards() {
   const cardsContainer = document.getElementById("game-cards");
@@ -272,6 +304,7 @@ function setupSearch() {
 
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase().trim();
+
     if (!query) {
       searchResults.style.display = "none";
       searchResults.innerHTML = "";
@@ -285,13 +318,13 @@ function setupSearch() {
     if (matchedGame) {
       searchResults.style.display = "block";
       searchResults.innerHTML = `
-        <div class="search-result-item">
+        <a style="text-decoration: none; color: white;" href="detalhes.html?id=${matchedGame.id}" class="search-result-item">
           <img src="${matchedGame.imageUrl}" alt="${matchedGame.title}">
           <div>
             <h3>${matchedGame.title}</h3>
             <p>${matchedGame.price}</p>
           </div>
-        </div>
+        </a>
       `;
     } else {
       searchResults.style.display = "block";
@@ -299,6 +332,7 @@ function setupSearch() {
     }
   });
 }
+
 
 // FUNÇÃO PARA DETALHES - para página detalhes.html
 function carregarProduto() {

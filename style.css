@@ -269,7 +269,7 @@ a {
     background-color: black;
     border-radius: 8px;
     width: 200px;
-    height: 380px;
+    height: 400px;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -279,9 +279,11 @@ a {
 
 
 .card img {
-    width: 100%;
-    height: 250px;
-    border-radius: 2px;
+  width: 100% 100%;
+  height: 275px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
 }
 
 .card-content {
@@ -354,7 +356,7 @@ a {
 .carousel-container {
     margin-top: 30px;
     display: flex;
-    height: 50vh;
+    height: 60vh;
     color: #fff;
     justify-content: center;
     gap: 10px;
@@ -366,9 +368,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* Centralizar conteúdo */
-    max-width: 60%;
-    /* Reduzir a largura */
+    max-width: 65%;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -393,7 +393,7 @@ a {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 85%;
     padding: 20px;
     z-index: 2;
     text-align: left;
@@ -428,7 +428,7 @@ a {
 }
 
 .sidebar-item img {
-    width: 50px;
+    width: 80px;
     height: 50px;
     object-fit: cover;
     border-radius: 5px;
@@ -549,6 +549,7 @@ a {
     justify-content: center;
   }
 }
+
 
 /* Tablets menores e celulares grandes (768px) */
 @media (max-width: 768px) {
@@ -721,4 +722,72 @@ a {
   padding-top: 15px;
   font-size: 13px;
   color: #999;
+}
+@media (max-width: 1024px) {
+  .carousel-container {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .carousel-highlight {
+    max-width: 100%;
+    width: 100%;
+    min-height: 300px;
+    padding: 15px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .highlight-content {
+    padding: 15px;
+    width: 410px;
+  }
+
+  .carousel-sidebar {
+    flex-direction: row;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px;
+    margin-top: 15px;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .sidebar-item {
+    min-width: 120px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sidebar-item img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .sidebar-item p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .highlight-content h1 {
+    font-size: 18px;
+  }
+
+  .highlight-content p {
+    font-size: 14px;
+  }
+
+  .carousel-highlight {
+    min-height: 250px;
+  }
+
+  .sidebar-item img {
+    width: 50px;
+    height: 50px;
+  }
 }
