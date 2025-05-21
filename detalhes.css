@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color:  rgb(20, 20, 20);
+  background-color: rgb(20, 20, 20);
   color: #e6edf3;
   margin: 0;
   padding: 0;
@@ -9,7 +9,8 @@ body {
   justify-content: center;
   min-height: 100vh;
 }
-a{
+
+a {
   text-decoration: none;
 }
 
@@ -34,7 +35,7 @@ a{
   border-radius: 12px;
   padding: 30px;
   margin-top: 40px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .voltar-btn {
@@ -124,6 +125,7 @@ a{
   margin-bottom: 8px;
   font-size: 15px;
 }
+
 .produto-detalhes-flex {
   display: flex;
   flex-wrap: wrap;
@@ -147,6 +149,7 @@ a{
   flex-direction: column;
   gap: 20px;
 }
+
 /* Header */
 
 .header {
@@ -200,21 +203,89 @@ a{
   display: flex;
   align-items: center;
   gap: 15px;
+
+}
+
+.search-bar-wrapper {
+  position: relative;
+  width: 250px;
+}
+.search-bar-container {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  padding: 10px 20px;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  border-radius: 25px;
+  padding: 5px 15px;
+  margin-right: 20px;
+}
+
+
+
+.search-input::placeholder {
+  color: #888;
+}
+.search-results-drawer {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 10px;
+  display: none;
+  color: white;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+.search-result-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.search-result-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.search-result-item h3 {
+  font-size: 15px;
+  margin: 0;
+}
+
+.search-result-item p {
+  font-size: 14px;
+  color: #ccc;
+  margin: 0;
 }
 
 .search-bar {
-  background-color: #222;
-  border-radius: 20px;
+  background-color: #333;
+  border-radius: 25px;
   padding: 5px 15px;
+  display: flex;
+  align-items: center;
 }
 
 .search-input {
+  background: none;
   border: none;
-  background: transparent;
-  color: #fff;
-  font-size: 14px;
   outline: none;
-  width: 150px;
+  color: #fff;
+  font-size: 16px;
+  width: 100%;
 }
 
 
@@ -313,6 +384,7 @@ a{
   font-size: 13px;
   color: #999;
 }
+
 /* Responsividade para detalhes.html */
 @media (max-width: 992px) {
   .detalhes-container {
